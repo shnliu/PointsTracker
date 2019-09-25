@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
-import Button from 'react-native-button';
+import {Button, StyleSheet, View } from 'react-native';
 
 export default class HomeScreen extends React.Component {
     static navigationOptions = {
-        title: 'Hello',
+        title: 'HOME',
     };
     render() {
         const {navigate} = this.props.navigation;
         return (
             <Button
-                title="Go to Jane's profile"
+                title="BUTTON"
                 onPress={() => navigate('Profile', {name: 'Jane'})}
             />
         );
