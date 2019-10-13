@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 
 export default class ProfileScreen extends React.Component {
     static navigationOptions = {
-        title: 'Profile',
+        title: 'PROFILE',
     };
     render() {
         return (

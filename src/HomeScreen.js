@@ -8,10 +8,12 @@ export default class HomeScreen extends React.Component {
     render() {
         const {navigate} = this.props.navigation;
         return (
-            <Button
-                title="BUTTON"
-                onPress={() => navigate('Profile', {name: 'Jane'})}
-            />
+            <View>
+                <Button onPress={()=> navigate('Profile', {name:'Jane'})} title={'Profile'}> </Button>
+                <Button onPress={()=> navigate('About')} title={'About'} color={'green'}> </Button>
+                <Button onPress={()=> navigate('Help')} title={'Help'} color={'orange'}> </Button>
+            </View>
+
         );
     }
 }
