@@ -23,7 +23,7 @@ export const DecentButton = (props) => {
             borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: 'rgba(255,255,255,0.7)',
+            backgroundColor: 'rgba(255,255,255,0.6)',
 
             shadowColor: '#fff',
             shadowOpacity: 0.4,
@@ -32,7 +32,7 @@ export const DecentButton = (props) => {
         },
         textStyle: {
             alignSelf: 'center',
-            color: '#000',
+            color: '#383838',
             fontSize: 16,
             paddingTop: 10,
             paddingBottom: 10
