@@ -4,25 +4,31 @@ import {StyleSheet} from 'react-native';
 
 
 /***
- * Reference: https://levelup.gitconnected.com/how-to-make-a-really-cool-button-in-react-native-4cb848b88834
+ * Reference: https://medium.com/plark/react-native-how-to-make-custom-button-30b34b020def
  * @param onPress
  * @param children
  * @returns {*}
  * @constructor
  */
 
-export const DecentButton = ({onPress, children}) => {
+export const DecentButton = (props) => {
+
+    const {style = {}, textStyle = {}, onPress} = props;
 
     const styles= StyleSheet.create({
         buttonStyle: {
-            flex: 1,
-            alignSelf: 'stretch',
-            backgroundColor: '#fff',
-            borderRadius: 5,
+            display: 'flex',
+            height: 50,
+            borderRadius: 10,
             borderWidth: 1,
-            borderColor: '#fff',
-            marginLeft: 5,
-            marginRight: 5
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: 'rgba(255,255,255,0.7)',
+
+            shadowColor: '#fff',
+            shadowOpacity: 0.4,
+            shadowOffset: { height: 10, width: 0 },
+            shadowRadius: 20,
         },
         textStyle:{
             alignSelf: 'center',
@@ -33,12 +39,12 @@ export const DecentButton = ({onPress, children}) => {
         }
     });
 
-
     return (
-        <TouchableOpacity> onPress={onPress} style={styles.buttonStyle}
-            <Text style={styles.textStyle}>
-                {children}
-            </Text>
+        <TouchableOpacity onPress={onPress} style={[styles.buttonStyle, style]}>
+            <Text style={[styles.textStyle, textStyle]}> {props.title}</Text>
         </TouchableOpacity>
     );
+
+
+
 };

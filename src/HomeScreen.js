@@ -9,15 +9,16 @@ export default class HomeScreen extends React.Component {
     static navigationOptions = {
         title: 'HOME',
     };
+    
     render() {
         const {navigate} = this.props.navigation;
         return (
             <ImageBackground source={require('./images/hearts-1.jpeg')} imageStyle={{resizeMode: 'cover'}}
                              style={{width:'100%', height:'100%'}}>
                 <View style={{ flex: 1, justifyContent: "space-evenly", alignSelf: "center"}} >
-                    <Button onPress={()=> navigate('Display')} title={'Display'} color={'#F99ACE'}> </Button>
-                    <Button onPress={()=> navigate('About')} title={'About'} color={'#F99ACE'}> </Button>
-                    <Button onPress={()=> navigate('Help')} title={'Help'} color={'#F99ACE'}> </Button>
+                    <DecentButton onPress={()=> navigate('Display')} title={'Display '} > </DecentButton>
+                    <DecentButton onPress={()=> navigate('About')} title={'About '} > </DecentButton>
+                    <DecentButton onPress={()=> navigate('Help')} title={'Help '} > </DecentButton>
                 </View>
             </ImageBackground>
 
