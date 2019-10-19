@@ -5,9 +5,12 @@ import HomeScreen from "./HomeScreen";
 import DisplayScreen from "./DisplayScreen";
 
 const MainNavigator = createStackNavigator({
-  Home: {screen: HomeScreen},
-  Display: {screen: DisplayScreen},
-});
+        Home: {screen: HomeScreen},
+        Display: {screen: DisplayScreen},
+    },
+    {
+        headerMode: 'none'
+    });
 
 const App = createAppContainer(MainNavigator);
 

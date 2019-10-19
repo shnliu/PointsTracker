@@ -15,7 +15,7 @@ export const DecentButton = (props) => {
 
     const {style = {}, textStyle = {}, onPress} = props;
 
-    const styles= StyleSheet.create({
+    const styles = StyleSheet.create({
         buttonStyle: {
             display: 'flex',
             height: 50,
@@ -27,10 +27,10 @@ export const DecentButton = (props) => {
 
             shadowColor: '#fff',
             shadowOpacity: 0.4,
-            shadowOffset: { height: 10, width: 0 },
+            shadowOffset: {height: 10, width: 0},
             shadowRadius: 20,
         },
-        textStyle:{
+        textStyle: {
             alignSelf: 'center',
             color: '#000',
             fontSize: 16,
@@ -44,7 +44,6 @@ export const DecentButton = (props) => {
             <Text style={[styles.textStyle, textStyle]}> {props.title}</Text>
         </TouchableOpacity>
     );
-
 
 
 };
