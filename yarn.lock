@@ -4942,6 +4942,11 @@ react-native-gesture-handler@^1.4.1:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+react-native-pie-chart@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/react-native-pie-chart/-/react-native-pie-chart-1.0.13.tgz#2f456ea1aec831dba2de930235df3c6d2c478294"
+  integrity sha512-3SYGGDq3ZnL6kJNeaFxd7BHqBU1+umD9POYYlGMlYEE0sPpZ7Pw+kgiPcm70xUP9Kuj8/def3A2/0krOtNhohA==
+
 react-native-safe-area-view@^0.14.1:
   version "0.14.8"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.8.tgz#ef33c46ff8164ae77acad48c3039ec9c34873e5b"

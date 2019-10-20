@@ -14,7 +14,7 @@ export default class HomeScreen extends React.Component {
                              style={{width: '100%', height: '100%'}}>
                 <View style={{flex: 1, justifyContent: "space-evenly", alignSelf: "center"}}>
                     <Text style={{fontSize: 30, color: "#383838"}}> Friendly Points Tracker </Text>
-                    <DecentButton onPress={() => navigate('Display')} title={'Display '}> </DecentButton>
+                    <DecentButton onPress={() => navigate('Points')} title={'Points '}> </DecentButton>
                     <DecentButton onPress={() => navigate('About')} title={'About '}> </DecentButton>
                 </View>
             </ImageBackground>

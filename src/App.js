@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import HomeScreen from "./HomeScreen";
-import DisplayScreen from "./DisplayScreen";
+import PointsScreen from "./PointsScreen";
 
 const MainNavigator = createStackNavigator({
         Home: {screen: HomeScreen},
-        Display: {screen: DisplayScreen},
+        Points: {screen: PointsScreen},
     },
     {
         headerMode: 'none'
