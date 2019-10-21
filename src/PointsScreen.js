@@ -23,7 +23,7 @@ export default class PointsScreen extends React.Component {
                 <View style={{flex: 1, flexDirection: "column", alignItems: "center"}}>
                     <Text style={{flex:1, fontSize:30, color:'#383838'}}>POINTS</Text>
                     <PieChart doughnut={true} chart_wh={250} series={[this.state.countA, this.state.countB]}
-                               sliceColor={['#EE74EE', '#EE7474']}/>
+                               sliceColor={['#EE74EE', '#EE7474']} coverFill={'rgba(255,255,255,0.7)'}/>
                     <View style={{flex:2, flexDirection: "row"}}>
                         <PointDisplay/>
                         <PointDisplay/>
