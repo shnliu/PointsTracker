@@ -20,10 +20,10 @@ export default class PointsScreen extends React.Component {
         return (
             <ImageBackground source={require('./images/hearts-2.jpeg')} imageStyle={{resizeMode: 'cover'}}
                              style={{width: '100%', height: '100%'}}>
-                <View style={{flex: 1, flexDirection: "column", justifyContent: "space-evenly", alignItems: "center"}}>
-                    <Text>POINTS</Text>
-                    <PieChart chart_wh={250} series={[this.state.countA, this.state.countB]}
-                              sliceColor={['#F44336', '#2196F3']}/>
+                <View style={{flex: 1, flexDirection: "column", alignItems: "center"}}>
+                    <Text style={{flex:1, fontSize:30, color:'#383838'}}>POINTS</Text>
+                    <PieChart doughnut={true} chart_wh={250} series={[this.state.countA, this.state.countB]}
+                               sliceColor={['#EE74EE', '#EE7474']}/>
                     <View style={{flex:1, flexDirection: "row"}}>
                         <PointDisplay/>
                         <PointDisplay/>
