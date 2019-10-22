@@ -1,7 +1,6 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import Button from 'react-native-button';
-import {DecentButton} from "./DecentButton";
 
 export default class PointDisplay extends React.Component{
 

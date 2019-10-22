@@ -1,9 +1,8 @@
-import React, {Component} from 'react';
-import {Button, StyleSheet, View} from 'react-native';
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
 import {ImageBackground} from 'react-native';
 import {Text} from 'react-native';
 import {DecentButton} from './DecentButton';
-
 
 export default class HomeScreen extends React.Component {
 
@@ -18,8 +17,6 @@ export default class HomeScreen extends React.Component {
                     <DecentButton onPress={() => navigate('About')} title={'About '}> </DecentButton>
                 </View>
             </ImageBackground>
-
-
         );
     }
 }

@@ -1,4 +1,4 @@
-# Hello1
+# PointsTracker
 
 This is a react native project.
 
@@ -38,3 +38,7 @@ With fix:
   android.enableJetifier=true"
   
 Rebuild and update yarn as needed.
+
+# Main Libraries
+- react-native-pie-chart
+- react-navigation
