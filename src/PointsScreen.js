@@ -26,7 +26,6 @@ export default class PointsScreen extends React.Component {
                                sliceColor={['#EE74EE', '#EE7474']} coverFill={'rgba(255,255,255,0.7)'}/>
                     <View style={{flex:2, flexDirection: "row"}}>
                         <PointDisplay/>
-                        <PointDisplay/>
                     </View>
                 </View>
             </ImageBackground>
