@@ -1,6 +1,7 @@
 # PointsTracker
 
 This is a react native project.
+Tracks points between 2 people for some friendly competition.
 
 Development OS: MacOS
 Target OS: Android
@@ -20,8 +21,6 @@ Target OS: Android
 To refresh device upon changes:
    - Double press "R" keyboard
     
-This project has no purpose.
-
 
 # Set Up
 
