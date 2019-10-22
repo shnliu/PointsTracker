@@ -11,7 +11,7 @@ export default class PointsScreen extends React.Component {
 
     state = {
         countA: 1,
-        countB: 1
+        countB: 2
     };
 
     render() {
@@ -23,9 +23,10 @@ export default class PointsScreen extends React.Component {
                         <Text style={{flex:0.65, fontSize:30, color:'#383838'}}> POINTS </Text>
                     </View>
                     <PieChart doughnut={true} chart_wh={250} series={[this.state.countA, this.state.countB]}
-                               sliceColor={['#EE74EE', '#EE7474']} coverFill={'rgba(255,255,255,0.7)'}/>
+                               sliceColor={['#EE7474', '#EE74EE']} coverFill={'rgba(255,255,255,0.7)'}/>
                     <View style={{flex:2, flexDirection: "row"}}>
-                        <PointDisplay/>
+                        <PointDisplay color={'#EE74EE'} count={this.countA} label={'A'}/>
+                        <PointDisplay color={'#EE7474'} count={this.countB} label={'B'}/>
                     </View>
                 </View>
             </ImageBackground>
