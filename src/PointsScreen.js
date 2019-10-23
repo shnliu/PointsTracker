@@ -17,6 +17,9 @@ export default class PointsScreen extends React.Component {
         };
     }
 
+    incrementCountB(){
+        alert("hi");
+    };
 
     render() {
         return (

@@ -9,13 +9,16 @@ export default class PointDisplay extends React.Component{
         this.state={
             count: this.props.count
         }
+
     }
 
     incrementCount(){
-        alert("yo");
-        this.setState((state) => {
-            return {count: state.count +1}
-        })
+        alert("hello");
+        this.setState((prevState) => ({count: prevState.count + 1}))
+    };
+
+    decrementCount(){
+        alert("hi");
     };
 
     render() {
@@ -23,11 +26,11 @@ export default class PointDisplay extends React.Component{
             <View style={{flex:1, flexDirection: "column", justifyContent: "center", alignItems:"center"}}>
                 <Text style={{color: this.props.color, fontSize: 40}}>{this.props.label}</Text>
                 <Text style={{color: this.props.color, fontSize: 50, backgroundColor: 'white', borderRadius:10}}>
-                    {this.props.count}
+                    {this.state.count}
                 </Text>
                 <View style={{flexDirection: "row"}}>
-                    <Button onClick={()=>this.incrementCount()} style={{color: this.props.color, fontSize:40}}>+</Button>
-                    <Button style={{color: this.props.color, fontSize:40}}>-</Button>
+                    <Button onPress={()=>this.incrementCount()} style={{color: this.props.color, fontSize:40}}>+</Button>
+                    <Button onPress={()=>this.decrementCount()} style={{color: this.props.color, fontSize:40}}>-</Button>
                 </View>
             </View>
 
