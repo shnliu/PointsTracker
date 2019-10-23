@@ -12,14 +12,10 @@ export default class PointsScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            countA: 100,
-            countB: 20
+            countA: 2,
+            countB: 1
         };
     }
-
-    incrementCountB(){
-        alert("hi");
-    };
 
     render() {
         return (

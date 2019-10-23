@@ -9,16 +9,14 @@ export default class PointDisplay extends React.Component{
         this.state={
             count: this.props.count
         }
-
     }
 
     incrementCount(){
-        alert("hello");
         this.setState((prevState) => ({count: prevState.count + 1}))
     };
 
     decrementCount(){
-        alert("hi");
+        this.setState((prevState) => ({count: prevState.count - 1}))
     };
 
     render() {
