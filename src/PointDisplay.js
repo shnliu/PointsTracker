@@ -2,33 +2,35 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import Button from 'react-native-button';
 
-export default class PointDisplay extends React.Component{
+export default class PointDisplay extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
+        this.state = {
             count: this.props.count
         }
     }
 
-    incrementCount(){
+    incrementCount() {
         this.setState((prevState) => ({count: prevState.count + 1}))
     };
 
-    decrementCount(){
+    decrementCount() {
         this.setState((prevState) => ({count: prevState.count - 1}))
     };
 
     render() {
         return (
-            <View style={{flex:1, flexDirection: "column", justifyContent: "center", alignItems:"center"}}>
+            <View style={{flex: 1, flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                 <Text style={{color: this.props.color, fontSize: 40}}>{this.props.label}</Text>
-                <Text style={{color: this.props.color, fontSize: 50, backgroundColor: 'white', borderRadius:10}}>
+                <Text style={{color: this.props.color, fontSize: 50, backgroundColor: 'white', borderRadius: 10}}>
                     {this.state.count}
                 </Text>
                 <View style={{flexDirection: "row"}}>
-                    <Button onPress={()=>this.incrementCount()} style={{color: this.props.color, fontSize:40}}>+</Button>
-                    <Button onPress={()=>this.decrementCount()} style={{color: this.props.color, fontSize:40}}>-</Button>
+                    <Button onPress={() => this.incrementCount()}
+                            style={{color: this.props.color, fontSize: 40}}>+</Button>
+                    <Button onPress={() => this.decrementCount()}
+                            style={{color: this.props.color, fontSize: 40}}>-</Button>
                 </View>
             </View>
 

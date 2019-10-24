@@ -15,6 +15,7 @@ export default class HomeScreen extends React.Component {
                     <Text style={{fontSize: 30, color: "#383838"}}> Friendly Points Tracker </Text>
                     <DecentButton onPress={() => navigate('Points')} title={'Points '}> </DecentButton>
                     <DecentButton onPress={() => navigate('About')} title={'About '}> </DecentButton>
+                    <DecentButton onPress={() => navigate('Setting')} title={'Settings '}> </DecentButton>
                 </View>
             </ImageBackground>
         );
