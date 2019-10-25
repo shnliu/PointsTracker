@@ -42,18 +42,29 @@ export default class PointsScreen extends React.Component {
         return (
             <ImageBackground source={require('./images/hearts-2.jpeg')} imageStyle={{resizeMode: 'cover'}}
                              style={{width: '100%', height: '100%'}}>
-                <View style={{flex: 1, flexDirection: "column", alignItems: "center"}}>
-                    <View style={{flex: 1, flexDirection: 'column-reverse'}}>
+                <View style={{flex: 1}}>
+                    <View style={{flex: 1.5, flexDirection: 'column-reverse', alignItems: 'center'}}>
                         <Text style={{flex: 0.65, fontSize: 30, color: '#383838'}}> POINTS </Text>
                     </View>
-                    <PieChart doughnut={true} chart_wh={250} series={[this.state.countA, this.state.countB]}
+                    <PieChart style={{alignSelf: 'center'}} doughnut={true} chart_wh={250}
+                              series={[this.state.countA, this.state.countB]}
                               sliceColor={['#EE74EE', '#EE7474']} coverFill={'rgba(255,255,255,0.7)'}/>
-                    <View style={{flex: 2.5, flexDirection: "row"}}>
-                        <PointDisplay increment={this.incrementA} decrement={this.decrementA} color={'#EE74EE'} count={this.state.countA}
+                    <View style={{flex: 2.5, flexDirection: "row", alignItems: 'center'}}>
+                        <PointDisplay increment={this.incrementA} decrement={this.decrementA} color={'#EE74EE'}
+                                      count={this.state.countA}
                                       label={'UserA'}/>
-                        <PointDisplay increment={this.incrementB} decrement={this.decrementB} color={'#EE7474'} count={this.state.countB}
+                        <PointDisplay increment={this.incrementB} decrement={this.decrementB} color={'#EE7474'}
+                                      count={this.state.countB}
                                       label={'UserB'}/>
                     </View>
+                    <Button style={{
+                        color: '#383838',
+                        fontSize: 40,
+                        backgroundColor: 'pink',
+                        alignSelf: 'stretch'
+                    }}>Edit
+                    </Button>
+
                 </View>
             </ImageBackground>
         );
