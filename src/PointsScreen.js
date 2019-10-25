@@ -5,6 +5,10 @@ import PieChart from 'react-native-pie-chart';
 import PointDisplay from "./PointDisplay";
 import Button from "react-native-button";
 
+/*
+Reference: https://stackoverflow.com/questions/35537229/how-to-update-parents-state-in-react
+ */
+
 export default class PointsScreen extends React.Component {
     static navigationOptions = {
         title: 'POINTS',
@@ -13,10 +17,26 @@ export default class PointsScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            countA: 2,
+            countA: 1,
             countB: 1
         };
     }
+
+    incrementA = () => {
+        this.setState((prevState) => ({countA: prevState.countA + 1}))
+    };
+
+    incrementB = () => {
+        this.setState((prevState) => ({countB: prevState.countB + 1}))
+    };
+
+    decrementA = () => {
+        this.setState((prevState) => ({countA: prevState.countA - 1}))
+    };
+
+    decrementB = () => {
+        this.setState((prevState) => ({countB: prevState.countB - 1}))
+    };
 
     render() {
         return (
@@ -29,8 +49,10 @@ export default class PointsScreen extends React.Component {
                     <PieChart doughnut={true} chart_wh={250} series={[this.state.countA, this.state.countB]}
                               sliceColor={['#EE74EE', '#EE7474']} coverFill={'rgba(255,255,255,0.7)'}/>
                     <View style={{flex: 2.5, flexDirection: "row"}}>
-                        <PointDisplay color={'#EE74EE'} count={this.state.countA} label={'UserA'}/>
-                        <PointDisplay color={'#EE7474'} count={this.state.countB} label={'UserB'}/>
+                        <PointDisplay increment={this.incrementA} decrement={this.decrementA} color={'#EE74EE'} count={this.state.countA}
+                                      label={'UserA'}/>
+                        <PointDisplay increment={this.incrementB} decrement={this.decrementB} color={'#EE7474'} count={this.state.countB}
+                                      label={'UserB'}/>
                     </View>
                 </View>
             </ImageBackground>
