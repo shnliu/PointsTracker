@@ -3,6 +3,7 @@ import {Text, View} from 'react-native';
 import {ImageBackground} from 'react-native';
 import PieChart from 'react-native-pie-chart';
 import PointDisplay from "./PointDisplay";
+import Button from "react-native-button";
 
 export default class PointsScreen extends React.Component {
     static navigationOptions = {
@@ -27,9 +28,39 @@ export default class PointsScreen extends React.Component {
                     </View>
                     <PieChart doughnut={true} chart_wh={250} series={[this.state.countA, this.state.countB]}
                               sliceColor={['#EE74EE', '#EE7474']} coverFill={'rgba(255,255,255,0.7)'}/>
-                    <View style={{flex: 2, flexDirection: "row"}}>
+                    <View style={{flex: 2.5, flexDirection: "row"}}>
                         <PointDisplay color={'#EE74EE'} count={this.state.countA} label={'UserA'}/>
                         <PointDisplay color={'#EE7474'} count={this.state.countB} label={'UserB'}/>
+                    </View>
+                    <View style={{flex: 0.5, flexDirection: "row"}}>
+                        <Button style={{
+                            fontSize: 30,
+                            marginHorizontal: 25,
+                            color: '#383838',
+                            borderWidth: 1,
+                            borderRadius: 10
+                        }}> + </Button>
+                        <Button style={{
+                            fontSize: 30,
+                            marginHorizontal: 25,
+                            color: '#383838',
+                            borderWidth: 1,
+                            borderRadius: 10
+                        }}> - </Button>
+                        <Button style={{
+                            fontSize: 30,
+                            marginHorizontal: 25,
+                            color: '#383838',
+                            borderWidth: 1,
+                            borderRadius: 10
+                        }}> ~ </Button>
+                        <Button style={{
+                            fontSize: 30,
+                            marginHorizontal: 25,
+                            color: '#383838',
+                            borderWidth: 1,
+                            borderRadius: 10
+                        }}> x </Button>
                     </View>
                 </View>
             </ImageBackground>

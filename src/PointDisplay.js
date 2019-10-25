@@ -28,9 +28,9 @@ export default class PointDisplay extends React.Component {
                 </Text>
                 <View style={{flexDirection: "row"}}>
                     <Button onPress={() => this.incrementCount()}
-                            style={{color: this.props.color, fontSize: 40}}>+</Button>
+                            style={{color: this.props.color, fontSize: 40, marginHorizontal:10}}>+</Button>
                     <Button onPress={() => this.decrementCount()}
-                            style={{color: this.props.color, fontSize: 40}}>-</Button>
+                            style={{color: this.props.color, fontSize: 40, marginHorizontal:10}}>-</Button>
                 </View>
             </View>
 
