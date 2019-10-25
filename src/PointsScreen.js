@@ -32,36 +32,6 @@ export default class PointsScreen extends React.Component {
                         <PointDisplay color={'#EE74EE'} count={this.state.countA} label={'UserA'}/>
                         <PointDisplay color={'#EE7474'} count={this.state.countB} label={'UserB'}/>
                     </View>
-                    <View style={{flex: 0.5, flexDirection: "row"}}>
-                        <Button style={{
-                            fontSize: 30,
-                            marginHorizontal: 25,
-                            color: '#383838',
-                            borderWidth: 1,
-                            borderRadius: 10
-                        }}> + </Button>
-                        <Button style={{
-                            fontSize: 30,
-                            marginHorizontal: 25,
-                            color: '#383838',
-                            borderWidth: 1,
-                            borderRadius: 10
-                        }}> - </Button>
-                        <Button style={{
-                            fontSize: 30,
-                            marginHorizontal: 25,
-                            color: '#383838',
-                            borderWidth: 1,
-                            borderRadius: 10
-                        }}> ~ </Button>
-                        <Button style={{
-                            fontSize: 30,
-                            marginHorizontal: 25,
-                            color: '#383838',
-                            borderWidth: 1,
-                            borderRadius: 10
-                        }}> x </Button>
-                    </View>
                 </View>
             </ImageBackground>
         );
