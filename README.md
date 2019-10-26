@@ -1,7 +1,7 @@
 # PointsTracker
 
 This is a react native project.
-Tracks points between 2 people for some friendly competition.
+Tracks points between 2 people for some friendly competition or trivial grudge.
 
 Development OS: MacOS
 Target OS: Android
@@ -14,12 +14,13 @@ Target OS: Android
 3. Run Device of choice (Click green play button)
     - Make sure that device appears
 4. Open Webstorm (or IDE of choice)
-5. Open terminal: Cd into project folder: Hello1
-6. In folder Hello1: $ react-native run-android
+5. Open terminal: Cd into project folder: PointsTracker
+6. In folder PointsTracker: $ react-native run-android
     - Make sure that build is successful
     
 To refresh device upon changes:
-   - Double press "R" keyboard
+   - Double press "r" keyboard
+   - Note: double r refresh does not work on modal screen
     
 
 # Set Up
@@ -41,3 +42,4 @@ Rebuild and update yarn as needed.
 # Main Libraries
 - react-native-pie-chart
 - react-navigation
+- react-native-simple-radio-button
