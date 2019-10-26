@@ -23,22 +23,28 @@ export default class EditModal extends React.Component {
                             backgroundColor: '#fff', padding: 20, width: Dimensions.get('window').width * 0.9,
                             height: Dimensions.get('window').height * 0.9
                         }}>
-                            <Text style={{flex: 1, fontSize:30}}>Hi i am a modal screen!!</Text>
-                            <View style={{flex: 3, flexDirection:'column', justifyContent:'space-between'}}>
-                                <View style={{flexDirection:'row'}}>
-                                    <Text style={{fontSize:20}}>USER</Text>
-                                    <RadioForm initial={0} radio_props={[{label: 'user1'},{label: 'user2'}]} />
+                            <Text style={{flex: 1, fontSize: 30}}>Hi i am a modal screen!!</Text>
+                            <View style={{flex: 3, flexDirection: 'column', justifyContent: 'space-between'}}>
+                                <View style={{flexDirection: 'row'}}>
+                                    <Text style={{fontSize: 20}}>USER</Text>
+                                    <RadioForm initial={0} formHorizontal={true} labelHorizontal={false}
+                                               radio_props={[{label: 'user1'}, {label: 'user2'}]}/>
                                 </View>
-                                <View style={{flexDirection:'row'}}>
-                                    <Text style={{fontSize:20}}>ACTION</Text>
-                                    <Picker></Picker>
+                                <View style={{flexDirection: 'row'}}>
+                                    <Text style={{fontSize: 20}}>ACTION</Text>
+                                    <Picker style={{height: 50, width: 100}}>
+                                        <Picker.Item label="add" value="add"/>
+                                        <Picker.Item label="subtract" value="subtract"/>
+                                        <Picker.Item label="transfer" value="transfer"/>
+                                        <Picker.Item label="clear" value="clear"/>
+                                    </Picker>
                                 </View>
-                                <View style={{flexDirection:'row'}}>
-                                    <Text style={{fontSize:20}}>NUMBER</Text>
-                                    <TextInput style={{backgroundColor:'pink'}}></TextInput>
+                                <View style={{flexDirection: 'row'}}>
+                                    <Text style={{fontSize: 20}}>NUMBER</Text>
+                                    <TextInput style={{backgroundColor: 'pink'}}></TextInput>
                                 </View>
-                                <View style={{flexDirection:'row'}}>
-                                    <Text style={{fontSize:20}}>RANDOM</Text>
+                                <View style={{flexDirection: 'row'}}>
+                                    <Text style={{fontSize: 20}}>RANDOM</Text>
                                     <Switch></Switch>
                                 </View>
                             </View>
