@@ -25,26 +25,26 @@ export default class EditModal extends React.Component {
                         }}>
                             <Text style={{flex: 1, fontSize: 30}}>Hi i am a modal screen!!</Text>
                             <View style={{flex: 3, flexDirection: 'column', justifyContent: 'space-between'}}>
-                                <View style={{flexDirection: 'row'}}>
-                                    <Text style={{fontSize: 20}}>USER</Text>
+                                <View style={{flexDirection: 'row', alignItems:'center', justifyContent:'space-between'}}>
+                                    <Text style={{fontSize: 20}}>User</Text>
                                     <RadioForm initial={0} formHorizontal={true} labelHorizontal={false}
                                                radio_props={[{label: 'user1'}, {label: 'user2'}]}/>
                                 </View>
-                                <View style={{flexDirection: 'row'}}>
-                                    <Text style={{fontSize: 20}}>ACTION</Text>
+                                <View style={{flexDirection: 'row', alignItems:'center', justifyContent:'space-between'}}>
+                                    <Text style={{fontSize: 20}}>Action</Text>
                                     <Picker style={{height: 50, width: 100}}>
                                         <Picker.Item label="add" value="add"/>
-                                        <Picker.Item label="subtract" value="subtract"/>
+                                        <Picker.Item label="minus" value="subtract"/>
                                         <Picker.Item label="transfer" value="transfer"/>
                                         <Picker.Item label="clear" value="clear"/>
                                     </Picker>
                                 </View>
-                                <View style={{flexDirection: 'row'}}>
-                                    <Text style={{fontSize: 20}}>NUMBER</Text>
+                                <View style={{flexDirection: 'row', alignItems:'center', justifyContent:'space-between'}}>
+                                    <Text style={{fontSize: 20}}>Points</Text>
                                     <TextInput style={{backgroundColor: 'pink'}}></TextInput>
                                 </View>
-                                <View style={{flexDirection: 'row'}}>
-                                    <Text style={{fontSize: 20}}>RANDOM</Text>
+                                <View style={{flexDirection: 'row', alignItems:'center', justifyContent:'space-between'}}>
+                                    <Text style={{fontSize: 20}}>Random Number</Text>
                                     <Switch></Switch>
                                 </View>
                             </View>
