@@ -12,6 +12,7 @@
     "react-native-button": "^2.4.0",
     "react-native-gesture-handler": "^1.4.1",
     "react-native-pie-chart": "^1.0.13",
+    "react-native-simple-radio-button": "^2.7.4",
     "react-navigation": "^4.0.9",
     "react-navigation-stack": "^1.9.0"
   },
