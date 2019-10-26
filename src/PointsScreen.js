@@ -24,9 +24,12 @@ export default class PointsScreen extends React.Component {
         };
     }
 
-    openModal() {
-        alert("open modal!");
-       // this.setState({modalVisible: visible})
+    openModal = () => {
+        this.setState({modalVisible: true})
+    };
+
+    closeModal = () => {
+        this.setState({modalVisible: false})
     };
 
     incrementA = () => {
@@ -71,10 +74,9 @@ export default class PointsScreen extends React.Component {
                         backgroundColor: 'pink',
                         alignSelf: 'stretch'
                     }}
-                            onPress={() => this.openModal()}
-                    >Edit
+                            onPress={() => this.openModal()} >Edit
                     </Button>
-
+                    {this.state.modalVisible? <EditModal visible={this.state.modalVisible} close={this.closeModal}/> : null}
                 </View>
             </ImageBackground>
         );
