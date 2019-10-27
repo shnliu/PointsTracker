@@ -48,7 +48,7 @@ export default class EditModal extends React.Component {
         },
         textInputStyle: {
             height: 40,
-            borderColor: 'gray',
+            borderColor: 'pink',
             borderWidth: 1,
             width: 100
         },
@@ -60,7 +60,7 @@ export default class EditModal extends React.Component {
         pickerStyle: {
             height: 50,
             width: 120,
-            borderWidth: 1
+            borderWidth: 1,
         }
     });
 
@@ -75,7 +75,7 @@ export default class EditModal extends React.Component {
                             <View style={this.styles.inputAreaViewStyle}>
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>User</Text>
-                                    <RadioForm initial={0} formHorizontal={true} labelHorizontal={false}
+                                    <RadioForm buttonColor={'pink'} selectedButtonColor={'pink'} formHorizontal={true} labelHorizontal={false}
                                                radio_props={[{label: 'user1'}, {label: 'user2'}]}/>
                                 </View>
                                 <View style={this.styles.optionViewStyle}>
