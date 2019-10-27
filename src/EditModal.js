@@ -49,7 +49,8 @@ export default class EditModal extends React.Component {
         textInputStyle: {
             height: 40,
             borderColor: 'gray',
-            borderWidth: 1
+            borderWidth: 1,
+            width: 100
         },
         modalOptionButtonStyle: {
             fontSize: 40,
@@ -58,7 +59,8 @@ export default class EditModal extends React.Component {
         },
         pickerStyle: {
             height: 50,
-            width: 120
+            width: 120,
+            borderWidth: 1
         }
     });
 

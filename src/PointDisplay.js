@@ -36,7 +36,7 @@ export default class PointDisplay extends React.Component {
         return (
             <View style={this.styles.pointsDisplayViewStyle}>
                 <Text style={this.styles.textLabelStyle}>{this.props.label}</Text>
-                <Text style={this.styles.textCountStyle}> {this.props.count}</Text>
+                <Text style={this.styles.textCountStyle}>{this.props.count}</Text>
                 <View style={{flexDirection: "row"}}>
                     <Button onPress={this.props.increment} style={this.styles.incDecButtonStyle}>+
                     </Button>
