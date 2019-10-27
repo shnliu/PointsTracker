@@ -19,7 +19,8 @@ export default class HomeScreen extends React.Component {
         contentViewStyle: {
             flex: 10,
             alignSelf: 'center',
-            justifyContent: 'space-around'}
+            justifyContent: 'space-around'
+        }
     });
 
     render() {
@@ -29,7 +30,8 @@ export default class HomeScreen extends React.Component {
                              style={this.styles.backgroundImageStyle}>
                 <View style={{flex: 1}}>
                     <View style={{flex: 1, justifyContent: "space-between"}}>
-                        <HomeSettingsBar/>
+                        <HomeSettingsBar onPressHome={() => navigate('Home')}
+                                         onPressSetting={() => navigate('Setting')}/>
                     </View>
                     <View style={this.styles.contentViewStyle}>
                         <Text style={this.styles.basicTextStyle}> Friendly Points Tracker </Text>

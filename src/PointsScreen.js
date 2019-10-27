@@ -82,14 +82,17 @@ export default class PointsScreen extends React.Component {
 
 
     render() {
+        const {navigate} = this.props.navigation;
+
         return (
             <ImageBackground source={require('./images/hearts-2.jpeg')} imageStyle={{resizeMode: 'cover'}}
                              style={this.styles.backgroundImageStyle}>
                 <View style={{flex: 1}}>
                     <View style={{flex: 1, justifyContent: "space-between"}}>
-                        <HomeSettingsBar/>
+                        <HomeSettingsBar onPressHome={() => navigate('Home')}
+                                         onPressSetting={() => navigate('Setting')}/>
                     </View>
-                    <View style={{ flex: 50, justifyContent: 'space-around'}}>
+                    <View style={{flex: 50, justifyContent: 'space-around'}}>
                         <View style={this.styles.textViewStyle}>
                             <Text style={this.styles.basicTextStyle}> POINTS </Text>
                         </View>
