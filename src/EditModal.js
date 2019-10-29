@@ -10,8 +10,8 @@ export default class EditModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userRadio: "",
-            actionSelect: "",
+            userRadio: null,
+            actionSelect: null,
             pointsInput: 0,
             randomSwitch: false
         };
@@ -83,7 +83,7 @@ export default class EditModal extends React.Component {
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>User</Text>
                                     <RadioForm buttonColor={'pink'} selectedButtonColor={'pink'} formHorizontal={true}
-                                               labelHorizontal={false}
+                                               labelHorizontal={false} initial={-1}
                                                radio_props={[{label: 'user1', value: "user1"}, {label: 'user2', value: "user2"}]}
                                                onPress={(userRadio) => {
                                                    this.setState({userRadio: userRadio})
