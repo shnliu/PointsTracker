@@ -56,6 +56,12 @@ export default class PointsScreen extends React.Component {
         }
     });
 
+    handleSubmit = (modalSubmitState) => {
+        this.setState({countA: modalSubmitState.pointsInput});
+        alert(JSON.stringify(modalSubmitState));
+        this.closeModal();
+    };
+
     openModal = () => {
         this.setState({modalVisible: true})
     };
@@ -107,7 +113,8 @@ export default class PointsScreen extends React.Component {
                         </View>
                         <Button style={this.styles.modalButtonStyle} onPress={() => this.openModal()}>Edit </Button>
                         {this.state.modalVisible ?
-                            <EditModal visible={this.state.modalVisible} close={this.closeModal}/> : null}
+                            <EditModal handleSubmit={this.handleSubmit} visible={this.state.modalVisible} close={this.closeModal}/>
+                            : null}
                     </View>
                 </View>
             </ImageBackground>
