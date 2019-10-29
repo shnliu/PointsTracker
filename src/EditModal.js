@@ -84,7 +84,7 @@ export default class EditModal extends React.Component {
                                     <Text style={this.styles.labelTextStyle}>User</Text>
                                     <RadioForm buttonColor={'pink'} selectedButtonColor={'pink'} formHorizontal={true}
                                                labelHorizontal={false}
-                                               radio_props={[{label: 'user1'}, {label: 'user2'}]} initial={0}
+                                               radio_props={[{label: 'user1', value: "user1"}, {label: 'user2', value: "user2"}]}
                                                onPress={(userRadio) => {
                                                    this.setState({userRadio: userRadio})
                                                }}/>
@@ -118,7 +118,6 @@ export default class EditModal extends React.Component {
                             <View style={this.styles.modalOptionStyle}>
                                 <Button style={this.styles.modalOptionButtonStyle}
                                         onPress={() => this.props.handleSubmit(this.state)}> ✓ </Button>
-                                /* child button needs to have arrow func that passes its state to parent */
                                 <Button style={this.styles.modalOptionButtonStyle}
                                         onPress={this.props.close}> X </Button>
                             </View>
