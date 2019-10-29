@@ -9,6 +9,12 @@ export default class EditModal extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            userRadio: "",
+            actionSelect: "",
+            pointsInput: 0,
+            randomSwitch: false
+        };
     }
 
     styles = StyleSheet.create({
@@ -75,12 +81,17 @@ export default class EditModal extends React.Component {
                             <View style={this.styles.inputAreaViewStyle}>
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>User</Text>
-                                    <RadioForm buttonColor={'pink'} selectedButtonColor={'pink'} formHorizontal={true} labelHorizontal={false}
-                                               radio_props={[{label: 'user1'}, {label: 'user2'}]}/>
+                                    <RadioForm buttonColor={'pink'} selectedButtonColor={'pink'} formHorizontal={true}
+                                               labelHorizontal={false}
+                                               radio_props={[{label: 'user1'}, {label: 'user2'}]} initial={0}
+                                               onPress={(userRadio) => {
+                                                   this.setState({userRadio: userRadio})
+                                               }}/>
                                 </View>
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>Action</Text>
-                                    <Picker style={this.styles.pickerStyle}>
+                                    <Picker style={this.styles.pickerStyle} selectedValue={this.state.actionSelect}
+                                            onValueChange={(actionSelect) => this.setState({actionSelect: actionSelect})}>
                                         <Picker.Item label="PLUS" value="plus"/>
                                         <Picker.Item label="MINUS" value="minus"/>
                                         <Picker.Item label="TRANSFER" value="transfer"/>
@@ -89,11 +100,18 @@ export default class EditModal extends React.Component {
                                 </View>
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>Points</Text>
-                                    <TextInput style={this.styles.textInputStyle}></TextInput>
+                                    <TextInput style={this.styles.textInputStyle} placeholder={'11111'}
+                                               keyboardType={'number-pad'} maxLength={9}
+                                               onChangeText={(pointsInput) => {
+                                                   this.setState({pointsInput: pointsInput})
+                                               }}/>
                                 </View>
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>Random Number</Text>
-                                    <Switch></Switch>
+                                    <Switch onValueChange={(randomSwitch) => {
+                                        this.setState({randomSwitch: randomSwitch})
+                                    }} value={this.state.randomSwitch}
+                                            thumbColor={'pink'} trackColor={{false: 'gray', true: 'gray'}}/>
                                 </View>
                             </View>
                             <View style={this.styles.modalOptionStyle}>

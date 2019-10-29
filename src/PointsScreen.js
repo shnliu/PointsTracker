@@ -107,7 +107,8 @@ export default class PointsScreen extends React.Component {
                         </View>
                         <Button style={this.styles.modalButtonStyle} onPress={() => this.openModal()}>Edit </Button>
                         {this.state.modalVisible ?
-                            <EditModal visible={this.state.modalVisible} close={this.closeModal}/> : null}
+                            <EditModal visible={this.state.modalVisible} close={this.closeModal}/>
+                            : null}
                     </View>
                 </View>
             </ImageBackground>
