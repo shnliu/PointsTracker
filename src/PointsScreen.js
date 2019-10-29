@@ -56,6 +56,11 @@ export default class PointsScreen extends React.Component {
         }
     });
 
+    handleSubmit = () => {
+        alert("hi");
+        this.closeModal();
+    };
+
     openModal = () => {
         this.setState({modalVisible: true})
     };
@@ -107,7 +112,7 @@ export default class PointsScreen extends React.Component {
                         </View>
                         <Button style={this.styles.modalButtonStyle} onPress={() => this.openModal()}>Edit </Button>
                         {this.state.modalVisible ?
-                            <EditModal visible={this.state.modalVisible} close={this.closeModal}/>
+                            <EditModal handleSubmit={this.handleSubmit} visible={this.state.modalVisible} close={this.closeModal}/>
                             : null}
                     </View>
                 </View>

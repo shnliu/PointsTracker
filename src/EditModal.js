@@ -70,6 +70,7 @@ export default class EditModal extends React.Component {
         }
     });
 
+
     render() {
         return (
             <View>
@@ -116,7 +117,7 @@ export default class EditModal extends React.Component {
                             </View>
                             <View style={this.styles.modalOptionStyle}>
                                 <Button style={this.styles.modalOptionButtonStyle}
-                                        onPress={this.props.close}> ✓ </Button>
+                                        onPress={this.props.handleSubmit}> ✓ </Button>
                                 <Button style={this.styles.modalOptionButtonStyle}
                                         onPress={this.props.close}> X </Button>
                             </View>
