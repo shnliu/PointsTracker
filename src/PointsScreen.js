@@ -56,8 +56,9 @@ export default class PointsScreen extends React.Component {
         }
     });
 
-    handleSubmit = () => {
+    handleSubmit = (state) => {
         alert("hi");
+        this.setState({countA: state.pointsInput});
         this.closeModal();
     };
 

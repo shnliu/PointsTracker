@@ -117,7 +117,8 @@ export default class EditModal extends React.Component {
                             </View>
                             <View style={this.styles.modalOptionStyle}>
                                 <Button style={this.styles.modalOptionButtonStyle}
-                                        onPress={this.props.handleSubmit}> ✓ </Button>
+                                        onPress={() => this.props.handleSubmit(this.state)}> ✓ </Button>
+                                /* child button needs to have arrow func that passes its state to parent */
                                 <Button style={this.styles.modalOptionButtonStyle}
                                         onPress={this.props.close}> X </Button>
                             </View>
