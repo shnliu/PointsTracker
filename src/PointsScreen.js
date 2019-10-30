@@ -64,24 +64,27 @@ export default class PointsScreen extends React.Component {
     performAction(modalSubmitState){
         alert(JSON.stringify(modalSubmitState));
 
-        if (modalSubmitState.actionSelect==="clear"){
-            this.performClear(modalSubmitState.userRadio);
-        }
         if (modalSubmitState.actionSelect==="add"){
             this.performAdd(modalSubmitState.userRadio, modalSubmitState.pointsInput);
         }
-        if (modalSubmitState.actionSelect==="subtract"){
+        else if (modalSubmitState.actionSelect==="subtract"){
             this.performSubtract(modalSubmitState.userRadio, modalSubmitState.pointsInput);
         }
-        if (modalSubmitState.actionSelect==="transfer"){
-            // need to fix users for transfer
+        else if (modalSubmitState.actionSelect==="transfer"){
             this.performTransfer(modalSubmitState.userRadio, modalSubmitState.pointsInput);
         }
+        else if (modalSubmitState.actionSelect==="clear"){
+            this.performClear(modalSubmitState.userRadio);
+        }
+        else alert("Error! Please select a valid action.");
     };
 
-    performClear(count){
-        this.setState({[count]: 0});
-    };
+
+    getRandomNumber(){
+        const MIN = 0.01;
+        const MAX = 99;
+        return Math.random() * (MAX - MIN) + MIN;
+    }
 
     performAdd(count, points){
         this.setState((prevState)=>({[count]: (parseFloat(prevState[count]) + parseFloat([points]))}));
@@ -100,6 +103,10 @@ export default class PointsScreen extends React.Component {
             this.setState((prevState)=>({[countFrom]: (parseFloat(prevState[countFrom]) - parseFloat([points]))}));
             this.setState((prevState)=>({countA: (parseFloat(prevState.countA) + parseFloat([points]))}));
         }
+    };
+
+    performClear(count){
+        this.setState({[count]: 0});
     };
 
     openModal = () => {

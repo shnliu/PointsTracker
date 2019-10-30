@@ -101,19 +101,19 @@ export default class EditModal extends React.Component {
                                     </Picker>
                                 </View>
                                 <View style={this.styles.optionViewStyle}>
+                                    <Text style={this.styles.labelTextStyle}>Random Number</Text>
+                                    <Switch onValueChange={(randomSwitch) => {
+                                        this.setState({randomSwitch: randomSwitch})
+                                    }} value={this.state.randomSwitch}
+                                            thumbColor={'pink'} trackColor={{false: 'gray', true: 'gray'}}/>
+                                </View>
+                                <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>Points</Text>
                                     <TextInput style={this.styles.textInputStyle} placeholder={'11111'}
                                                keyboardType={'number-pad'} maxLength={9}
                                                onChangeText={(pointsInput) => {
                                                    this.setState({pointsInput: pointsInput})
                                                }}/>
-                                </View>
-                                <View style={this.styles.optionViewStyle}>
-                                    <Text style={this.styles.labelTextStyle}>Random Number</Text>
-                                    <Switch onValueChange={(randomSwitch) => {
-                                        this.setState({randomSwitch: randomSwitch})
-                                    }} value={this.state.randomSwitch}
-                                            thumbColor={'pink'} trackColor={{false: 'gray', true: 'gray'}}/>
                                 </View>
                             </View>
                             <View style={this.styles.modalOptionStyle}>
