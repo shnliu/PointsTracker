@@ -130,7 +130,7 @@ export default class EditModal extends React.Component {
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>Points</Text>
                                     <TextInput style={this.styles.textInputStyle}
-                                               defaultValue={JSON.stringify(this.state.randomNumber)}
+                                               defaultValue={this.state.randomSwitch? JSON.stringify(this.state.randomNumber) : null}
                                                editable={!this.state.randomSwitch}
                                                keyboardType={'number-pad'} maxLength={9}
                                                onChangeText={(pointsInput) => {
