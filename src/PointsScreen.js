@@ -70,6 +70,13 @@ export default class PointsScreen extends React.Component {
         if (modalSubmitState.actionSelect==="add"){
             this.performAdd(modalSubmitState.userRadio, modalSubmitState.pointsInput);
         }
+        if (modalSubmitState.actionSelect==="subtract"){
+            this.performSubtract(modalSubmitState.userRadio, modalSubmitState.pointsInput);
+        }
+        if (modalSubmitState.actionSelect==="transfer"){
+            // need to fix users for transfer
+            this.performTransfer(modalSubmitState.userRadio, modalSubmitState.pointsInput);
+        }
     };
 
     performClear(count){
@@ -77,10 +84,23 @@ export default class PointsScreen extends React.Component {
     };
 
     performAdd(count, points){
-        this.setState((prevState)=>({[count]: prevState[count] + [points]}));
+        this.setState((prevState)=>({[count]: (parseFloat(prevState[count]) + parseFloat([points]))}));
     };
 
+    performSubtract(count, points){
+        this.setState((prevState)=>({[count]: (parseFloat(prevState[count]) - parseFloat([points]))}));
+    };
 
+    performTransfer(countFrom, points){
+        if (countFrom==="countA"){
+            this.setState((prevState)=>({[countFrom]: (parseFloat(prevState[countFrom]) - parseFloat([points]))}));
+            this.setState((prevState)=>({countB: (parseFloat(prevState.countB) + parseFloat([points]))}));
+        }
+        else {
+            this.setState((prevState)=>({[countFrom]: (parseFloat(prevState[countFrom]) - parseFloat([points]))}));
+            this.setState((prevState)=>({countA: (parseFloat(prevState.countA) + parseFloat([points]))}));
+        }
+    };
 
     openModal = () => {
         this.setState({modalVisible: true})
