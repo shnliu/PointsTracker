@@ -57,7 +57,7 @@ export default class EditModal extends React.Component {
             height: 40,
             borderColor: 'pink',
             borderWidth: 1,
-            width: 100
+            width: 120
         },
         modalOptionButtonStyle: {
             fontSize: 40,
@@ -72,7 +72,7 @@ export default class EditModal extends React.Component {
     });
 
 
-    getRandomNumber() {
+    static getRandomNumber() {
         const MIN = 0.01;
         const MAX = 99;
         return Math.random() * (MAX - MIN) + MIN;
@@ -83,7 +83,7 @@ export default class EditModal extends React.Component {
            this.setState({pointsInput: 0});
         }
         else { // if randomSwitch is false
-            this.setState({randomNumber: this.getRandomNumber()});
+            this.setState({randomNumber: EditModal.getRandomNumber()});
         }
         this.setState({randomSwitch: randomSwitch});
     };
@@ -131,6 +131,7 @@ export default class EditModal extends React.Component {
                                     <Text style={this.styles.labelTextStyle}>Points</Text>
                                     <TextInput style={this.styles.textInputStyle}
                                                defaultValue={this.state.randomSwitch? JSON.stringify(this.state.randomNumber) : null}
+                                               placeholder={this.state.randomSwitch? null : "Enter a number"}
                                                editable={!this.state.randomSwitch}
                                                keyboardType={'number-pad'} maxLength={9}
                                                onChangeText={(pointsInput) => {
