@@ -65,8 +65,8 @@ export default class EditModal extends React.Component {
         },
         pickerStyle: {
             height: 50,
-            width: 120,
-            borderWidth: 1,
+            width: 225,
+            borderWidth: 1
         }
     });
 
@@ -84,7 +84,7 @@ export default class EditModal extends React.Component {
                                     <Text style={this.styles.labelTextStyle}>User</Text>
                                     <RadioForm buttonColor={'pink'} selectedButtonColor={'pink'} formHorizontal={true}
                                                labelHorizontal={false} initial={-1}
-                                               radio_props={[{label: 'user1', value: "user1"}, {label: 'user2', value: "user2"}]}
+                                               radio_props={[{label: 'user1', value: "countA"}, {label: 'user2', value: "countB"}]}
                                                onPress={(userRadio) => {
                                                    this.setState({userRadio: userRadio})
                                                }}/>
@@ -93,8 +93,9 @@ export default class EditModal extends React.Component {
                                     <Text style={this.styles.labelTextStyle}>Action</Text>
                                     <Picker style={this.styles.pickerStyle} selectedValue={this.state.actionSelect}
                                             onValueChange={(actionSelect) => this.setState({actionSelect: actionSelect})}>
-                                        <Picker.Item label="PLUS" value="plus"/>
-                                        <Picker.Item label="MINUS" value="minus"/>
+                                        <Picker.Item label="SELECT AN ACTION" value={null}/>
+                                        <Picker.Item label="PLUS" value="add"/>
+                                        <Picker.Item label="MINUS" value="subtract"/>
                                         <Picker.Item label="TRANSFER" value="transfer"/>
                                         <Picker.Item label="CLEAR" value="clear"/>
                                     </Picker>
