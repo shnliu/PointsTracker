@@ -13,7 +13,8 @@ export default class EditModal extends React.Component {
             userRadio: null,
             actionSelect: null,
             pointsInput: 0,
-            randomSwitch: false
+            randomSwitch: false,
+            randomNumber: 0
         };
     }
 
@@ -26,7 +27,7 @@ export default class EditModal extends React.Component {
             backgroundColor: '#fff',
             padding: 20,
             width: Dimensions.get('window').width * 0.9,
-            height: Dimensions.get('window').height * 0.9
+            height: Dimensions.get('window').height * 0.85
         },
         optionViewStyle: {
             flexDirection: 'row',
@@ -71,6 +72,22 @@ export default class EditModal extends React.Component {
     });
 
 
+    getRandomNumber() {
+        const MIN = 0.01;
+        const MAX = 99;
+        return Math.random() * (MAX - MIN) + MIN;
+    };
+
+    handleRandomSwitch(randomSwitch){
+        if (this.state.randomSwitch){
+           this.setState({pointsInput: 0});
+        }
+        else { // if randomSwitch is false
+            this.setState({randomNumber: this.getRandomNumber()});
+        }
+        this.setState({randomSwitch: randomSwitch});
+    };
+
     render() {
         return (
             <View>
@@ -84,7 +101,10 @@ export default class EditModal extends React.Component {
                                     <Text style={this.styles.labelTextStyle}>User</Text>
                                     <RadioForm buttonColor={'pink'} selectedButtonColor={'pink'} formHorizontal={true}
                                                labelHorizontal={false} initial={-1}
-                                               radio_props={[{label: 'UserA', value: "countA"}, {label: 'UserB', value: "countB"}]}
+                                               radio_props={[{label: 'UserA', value: "countA"}, {
+                                                   label: 'UserB',
+                                                   value: "countB"
+                                               }]}
                                                onPress={(userRadio) => {
                                                    this.setState({userRadio: userRadio})
                                                }}/>
@@ -102,19 +122,22 @@ export default class EditModal extends React.Component {
                                 </View>
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>Random Number</Text>
-                                    <Switch onValueChange={(randomSwitch) => {
-                                        this.setState({randomSwitch: randomSwitch})
-                                    }} value={this.state.randomSwitch}
+                                    <Switch onValueChange={(randomSwitch) => {this.handleRandomSwitch(randomSwitch)
+                                    }}
+                                            value={this.state.randomSwitch}
                                             thumbColor={'pink'} trackColor={{false: 'gray', true: 'gray'}}/>
                                 </View>
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>Points</Text>
-                                    <TextInput style={this.styles.textInputStyle} placeholder={'11111'}
+                                    <TextInput style={this.styles.textInputStyle}
+                                               defaultValue={JSON.stringify(this.state.randomNumber)}
+                                               editable={!this.state.randomSwitch}
                                                keyboardType={'number-pad'} maxLength={9}
                                                onChangeText={(pointsInput) => {
                                                    this.setState({pointsInput: pointsInput})
                                                }}/>
                                 </View>
+                                <View styles={{flex: 1}}/>
                             </View>
                             <View style={this.styles.modalOptionStyle}>
                                 <Button style={this.styles.modalOptionButtonStyle}

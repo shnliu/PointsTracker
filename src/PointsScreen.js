@@ -80,12 +80,6 @@ export default class PointsScreen extends React.Component {
     };
 
 
-    getRandomNumber(){
-        const MIN = 0.01;
-        const MAX = 99;
-        return Math.random() * (MAX - MIN) + MIN;
-    }
-
     performAdd(count, points){
         this.setState((prevState)=>({[count]: (parseFloat(prevState[count]) + parseFloat([points]))}));
     };
