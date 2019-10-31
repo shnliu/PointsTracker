@@ -12,9 +12,6 @@ Reference: https://stackoverflow.com/questions/35537229/how-to-update-parents-st
  */
 
 export default class PointsScreen extends React.Component {
-    static navigationOptions = {
-        title: 'POINTS',
-    };
 
     constructor(props) {
         super(props);
@@ -29,7 +26,7 @@ export default class PointsScreen extends React.Component {
         modalButtonStyle: {
             color: '#383838',
             fontSize: 40,
-            backgroundColor: 'pink',
+            backgroundColor: '#FFC0CB',
             alignSelf: 'stretch'
         },
         pointDisplayViewStyle: {
@@ -56,10 +53,51 @@ export default class PointsScreen extends React.Component {
         }
     });
 
-    handleSubmit = (modalSubmitState) => {
-        this.setState({countA: modalSubmitState.pointsInput});
-        alert(JSON.stringify(modalSubmitState));
+    handleModalSubmit = (modalSubmitState) => {
+        this.performAction(modalSubmitState);
         this.closeModal();
+    };
+
+    performAction(modalSubmitState){
+        alert(JSON.stringify(modalSubmitState));
+
+        if (modalSubmitState.actionSelect==="add"){
+            this.performAdd(modalSubmitState.userRadio, modalSubmitState.pointsInput);
+        }
+        else if (modalSubmitState.actionSelect==="subtract"){
+            this.performSubtract(modalSubmitState.userRadio, modalSubmitState.pointsInput);
+        }
+        else if (modalSubmitState.actionSelect==="transfer"){
+            this.performTransfer(modalSubmitState.userRadio, modalSubmitState.pointsInput);
+        }
+        else if (modalSubmitState.actionSelect==="clear"){
+            this.performClear(modalSubmitState.userRadio);
+        }
+        else alert("Error! Please select a valid action.");
+    };
+
+
+    performAdd(count, points){
+        this.setState((prevState)=>({[count]: (parseFloat(prevState[count]) + parseFloat([points]))}));
+    };
+
+    performSubtract(count, points){
+        this.setState((prevState)=>({[count]: (parseFloat(prevState[count]) - parseFloat([points]))}));
+    };
+
+    performTransfer(countFrom, points){
+        if (countFrom==="countA"){
+            this.setState((prevState)=>({[countFrom]: (parseFloat(prevState[countFrom]) - parseFloat([points]))}));
+            this.setState((prevState)=>({countB: (parseFloat(prevState.countB) + parseFloat([points]))}));
+        }
+        else {
+            this.setState((prevState)=>({[countFrom]: (parseFloat(prevState[countFrom]) - parseFloat([points]))}));
+            this.setState((prevState)=>({countA: (parseFloat(prevState.countA) + parseFloat([points]))}));
+        }
+    };
+
+    performClear(count){
+        this.setState({[count]: 0});
     };
 
     openModal = () => {
@@ -113,7 +151,7 @@ export default class PointsScreen extends React.Component {
                         </View>
                         <Button style={this.styles.modalButtonStyle} onPress={() => this.openModal()}>Edit </Button>
                         {this.state.modalVisible ?
-                            <EditModal handleSubmit={this.handleSubmit} visible={this.state.modalVisible} close={this.closeModal}/>
+                            <EditModal handleSubmit={this.handleModalSubmit} visible={this.state.modalVisible} close={this.closeModal}/>
                             : null}
                     </View>
                 </View>
