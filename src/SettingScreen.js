@@ -20,7 +20,7 @@ export default class SettingScreen extends React.Component {
                         <HomeSettingsBar onPressHome={() => navigate('Home')}
                                          onPressSetting={() => navigate('Setting')}/>
                     </View>
-                    <View style={{flex: 20, alignItems: 'center'}}>
+                    <View style={{flex: 15, alignItems: 'center'}}>
                         <Text> Settings </Text>
                     </View>
                 </View>

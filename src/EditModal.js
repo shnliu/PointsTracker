@@ -54,7 +54,7 @@ export default class EditModal extends React.Component {
         },
         textInputStyle: {
             height: 40,
-            borderColor: 'pink',
+            borderColor: '#FFC0CB',
             borderWidth: 1,
             width: 120
         },
@@ -81,7 +81,7 @@ export default class EditModal extends React.Component {
     handleRandomSwitch(randomSwitch) {
         if (this.state.randomSwitch) {
             this.setState({pointsInput: 0});
-        } else { // if randomSwitch is false
+        } else {
             this.setState({pointsInput: EditModal.getRandomNumber()});
         }
         this.setState({randomSwitch: randomSwitch});
@@ -101,13 +101,12 @@ export default class EditModal extends React.Component {
                                     <RadioForm buttonColor={'#FFC0CB'} selectedButtonColor={'#FFC0CB'}
                                                formHorizontal={true}
                                                labelHorizontal={false} initial={-1}
-                                               radio_props={[{label: 'UserA', value: "countA"}, {
-                                                   label: 'UserB',
-                                                   value: "countB"
-                                               }]}
+                                               radio_props={[{label: 'UserA', value: "countA"},
+                                                   {label: 'UserB', value: "countB"}]}
                                                onPress={(userRadio) => {
                                                    this.setState({userRadio: userRadio})
-                                               }}/>
+                                               }}
+                                    />
                                 </View>
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>Action</Text>

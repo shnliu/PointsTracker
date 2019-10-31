@@ -50,6 +50,14 @@ export default class PointsScreen extends React.Component {
         },
         pieChartStyle: {
             alignSelf: 'center'
+        },
+        navBarViewStyle: {
+            flex: 1,
+            justifyContent: "space-between"
+        },
+        contentViewStyle: {
+            flex: 15,
+            justifyContent: 'space-between'
         }
     });
 
@@ -59,7 +67,7 @@ export default class PointsScreen extends React.Component {
     };
 
     performAction(modalSubmitState){
-        alert(JSON.stringify(modalSubmitState));
+       // alert(JSON.stringify(modalSubmitState));
 
         if (modalSubmitState.actionSelect==="add"){
             this.performAdd(modalSubmitState.userRadio, modalSubmitState.pointsInput);
@@ -132,11 +140,11 @@ export default class PointsScreen extends React.Component {
             <ImageBackground source={require('./images/hearts-2.jpeg')} imageStyle={{resizeMode: 'cover'}}
                              style={this.styles.backgroundImageStyle}>
                 <View style={{flex: 1}}>
-                    <View style={{flex: 1, justifyContent: "space-between"}}>
+                    <View style={this.styles.navBarViewStyle}>
                         <HomeSettingsBar onPressHome={() => navigate('Home')}
                                          onPressSetting={() => navigate('Setting')}/>
                     </View>
-                    <View style={{flex: 50, justifyContent: 'space-around'}}>
+                    <View style={this.styles.contentViewStyle}>
                         <View style={this.styles.textViewStyle}>
                             <Text style={this.styles.basicTextStyle}> POINTS </Text>
                         </View>
