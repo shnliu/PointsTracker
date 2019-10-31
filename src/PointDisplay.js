@@ -22,7 +22,7 @@ export default class PointDisplay extends React.Component {
         textCountStyle: {
             color: this.props.color,
             fontSize: 50,
-            backgroundColor: 'white',
+            backgroundColor: '#fff',
             borderRadius: 10
         },
         incDecButtonStyle: {

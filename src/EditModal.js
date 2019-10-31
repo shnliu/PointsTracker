@@ -13,8 +13,7 @@ export default class EditModal extends React.Component {
             userRadio: null,
             actionSelect: null,
             pointsInput: 0,
-            randomSwitch: false,
-            randomNumber: 0
+            randomSwitch: false
         };
     }
 
@@ -61,12 +60,12 @@ export default class EditModal extends React.Component {
         },
         modalOptionButtonStyle: {
             fontSize: 40,
-            color: "pink",
+            color: "#FFC0CB",
             margin: 5
         },
         pickerStyle: {
             height: 50,
-            width: 225,
+            width: 150,
             borderWidth: 1
         }
     });
@@ -75,15 +74,15 @@ export default class EditModal extends React.Component {
     static getRandomNumber() {
         const MIN = 0.01;
         const MAX = 99;
-        return Math.random() * (MAX - MIN) + MIN;
+        const DIGITS = 3;
+        return (Math.random() * (MAX - MIN) + MIN).toFixed(DIGITS);
     };
 
-    handleRandomSwitch(randomSwitch){
-        if (this.state.randomSwitch){
-           this.setState({pointsInput: 0});
-        }
-        else { // if randomSwitch is false
-            this.setState({randomNumber: EditModal.getRandomNumber()});
+    handleRandomSwitch(randomSwitch) {
+        if (this.state.randomSwitch) {
+            this.setState({pointsInput: 0});
+        } else { // if randomSwitch is false
+            this.setState({pointsInput: EditModal.getRandomNumber()});
         }
         this.setState({randomSwitch: randomSwitch});
     };
@@ -99,7 +98,8 @@ export default class EditModal extends React.Component {
                             <View style={this.styles.inputAreaViewStyle}>
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>User</Text>
-                                    <RadioForm buttonColor={'pink'} selectedButtonColor={'pink'} formHorizontal={true}
+                                    <RadioForm buttonColor={'#FFC0CB'} selectedButtonColor={'#FFC0CB'}
+                                               formHorizontal={true}
                                                labelHorizontal={false} initial={-1}
                                                radio_props={[{label: 'UserA', value: "countA"}, {
                                                    label: 'UserB',
@@ -113,7 +113,7 @@ export default class EditModal extends React.Component {
                                     <Text style={this.styles.labelTextStyle}>Action</Text>
                                     <Picker style={this.styles.pickerStyle} selectedValue={this.state.actionSelect}
                                             onValueChange={(actionSelect) => this.setState({actionSelect: actionSelect})}>
-                                        <Picker.Item label="SELECT AN ACTION" value={null}/>
+                                        <Picker.Item label="SELECT" value={null}/>
                                         <Picker.Item label="PLUS" value="add"/>
                                         <Picker.Item label="MINUS" value="subtract"/>
                                         <Picker.Item label="TRANSFER" value="transfer"/>
@@ -122,16 +122,18 @@ export default class EditModal extends React.Component {
                                 </View>
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>Random Number</Text>
-                                    <Switch onValueChange={(randomSwitch) => {this.handleRandomSwitch(randomSwitch)
+                                    <Switch onValueChange={(randomSwitch) => {
+                                        this.handleRandomSwitch(randomSwitch)
                                     }}
                                             value={this.state.randomSwitch}
-                                            thumbColor={'pink'} trackColor={{false: 'gray', true: 'gray'}}/>
+                                            thumbColor={'#FFC0CB'}
+                                            trackColor={{false: '#808080', true: '#808080'}}/>
                                 </View>
                                 <View style={this.styles.optionViewStyle}>
                                     <Text style={this.styles.labelTextStyle}>Points</Text>
                                     <TextInput style={this.styles.textInputStyle}
-                                               defaultValue={this.state.randomSwitch? JSON.stringify(this.state.randomNumber) : null}
-                                               placeholder={this.state.randomSwitch? null : "Enter a number"}
+                                               defaultValue={this.state.randomSwitch ? JSON.stringify(this.state.pointsInput) : null}
+                                               placeholder={this.state.randomSwitch ? null : "Enter a number"}
                                                editable={!this.state.randomSwitch}
                                                keyboardType={'number-pad'} maxLength={9}
                                                onChangeText={(pointsInput) => {

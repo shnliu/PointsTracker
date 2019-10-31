@@ -12,9 +12,6 @@ Reference: https://stackoverflow.com/questions/35537229/how-to-update-parents-st
  */
 
 export default class PointsScreen extends React.Component {
-    static navigationOptions = {
-        title: 'POINTS',
-    };
 
     constructor(props) {
         super(props);
@@ -29,7 +26,7 @@ export default class PointsScreen extends React.Component {
         modalButtonStyle: {
             color: '#383838',
             fontSize: 40,
-            backgroundColor: 'pink',
+            backgroundColor: '#FFC0CB',
             alignSelf: 'stretch'
         },
         pointDisplayViewStyle: {
