@@ -136,7 +136,7 @@ export default class PointsScreen extends React.Component {
                         <HomeSettingsBar onPressHome={() => navigate('Home')}
                                          onPressSetting={() => navigate('Setting')}/>
                     </View>
-                    <View style={{flex: 50, justifyContent: 'space-around'}}>
+                    <View style={{flex: 15, justifyContent: 'space-between'}}>
                         <View style={this.styles.textViewStyle}>
                             <Text style={this.styles.basicTextStyle}> POINTS </Text>
                         </View>

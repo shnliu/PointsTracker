@@ -19,7 +19,7 @@ export default class AboutScreen extends React.Component {
                         <HomeSettingsBar onPressHome={() => navigate('Home')}
                                          onPressSetting={() => navigate('Setting')}/>
                     </View>
-                    <View style={{flex: 20}}>
+                    <View style={{flex: 15}}>
                         <Text style={{fontSize: 30, color: '#383838'}}> ABOUT </Text>
                         <Text> This is a simple points tracker. </Text>
                     </View>

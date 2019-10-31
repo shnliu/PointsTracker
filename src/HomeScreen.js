@@ -17,7 +17,7 @@ export default class HomeScreen extends React.Component {
             color: "#383838"
         },
         contentViewStyle: {
-            flex: 10,
+            flex: 15,
             alignSelf: 'center',
             justifyContent: 'space-around'
         }

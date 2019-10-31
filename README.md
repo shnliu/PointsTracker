@@ -43,3 +43,4 @@ Rebuild and update yarn as needed.
 - react-native-pie-chart
 - react-navigation
 - react-native-simple-radio-button
+- react-native-vector-icons/MaterialIcons
