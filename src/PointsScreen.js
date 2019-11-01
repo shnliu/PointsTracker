@@ -62,12 +62,15 @@ export default class PointsScreen extends React.Component {
     });
 
     handleModalSubmit = (modalSubmitState) => {
-        this.performAction(modalSubmitState);
-        this.closeModal();
+        const isModalSubmitValid = PointsScreen.validateModalSubmit(modalSubmitState);
+            if (isModalSubmitValid){
+                this.performAction(modalSubmitState);
+                this.closeModal();
+            }
     };
 
     performAction(modalSubmitState){
-       // alert(JSON.stringify(modalSubmitState));
+        // alert(JSON.stringify(modalSubmitState));
 
         if (modalSubmitState.actionSelect==="add"){
             this.performAdd(modalSubmitState.userRadio, modalSubmitState.pointsInput);
@@ -82,6 +85,56 @@ export default class PointsScreen extends React.Component {
             this.performClear(modalSubmitState.userRadio);
         }
         else alert("Error! Please select a valid action.");
+    };
+
+// A valid points input is any number between 0 and 999 with 3 or less decimal places.
+// returns true if valid, false otherwise
+    static validateModalSubmit(modalSubmitState){
+        if (modalSubmitState.userRadio == null){
+            alert("Please select a user.");
+        }
+        else if (modalSubmitState.actionSelect == null){
+            alert("Please select a valid action.");
+        }
+        else if(modalSubmitState.pointsInput == null || !PointsScreen.validatePointsInput(modalSubmitState.pointsInput)){
+            alert("Please enter a valid points input.");
+        }
+        else return true;
+    };
+
+// returns true if valid; false otherwise
+    static validatePointsInput(points){
+        const MAX_POINTS = 999;
+        const MIN_POINTS = 0;
+        const MAX_DECIMALS = 4;
+        let isValid = false;
+
+        // todo need to write isNumeric(). The following only works for strings without any numbers.
+        const numericPoints = parseFloat(points);
+
+        if (isNaN(numericPoints)){
+            alert("Error. Input is not a number.");
+        }
+        else {
+            if (points > MAX_POINTS){
+                alert("Error. Points input must be less than or equal to " + MAX_POINTS + ".")
+            }
+            else if (points < MIN_POINTS){
+                alert("Error. Points input must be greater than or equal to " + MIN_POINTS + ".");
+            }
+            else if (PointsScreen.getDecimals(points) > MAX_DECIMALS){
+                // todo write getDecimals()
+                alert("Error. Points input must have " + MAX_DECIMALS + " or fewer decimal places.");
+            }
+            else {
+                isValid = true;
+            }
+        }
+        return isValid;
+    }
+
+    static getDecimals(){
+        return 0;
     };
 
 

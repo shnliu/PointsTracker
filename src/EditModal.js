@@ -116,9 +116,9 @@ export default class EditModal extends React.Component {
                                     <Text style={this.styles.labelTextStyle}>Action</Text>
                                     <Picker style={this.styles.pickerStyle} selectedValue={this.state.actionSelect}
                                             onValueChange={(actionSelect) => this.setState({actionSelect: actionSelect})}>
-                                        <Picker.Item label="SELECT" value={null}/>
                                         <Picker.Item label="PLUS" value="add"/>
                                         <Picker.Item label="MINUS" value="subtract"/>
+                                        <Picker.Item label="<SELECT>" value={null}/>
                                         <Picker.Item label="TRANSFER" value="transfer"/>
                                         <Picker.Item label="CLEAR" value="clear"/>
                                     </Picker>
