@@ -87,6 +87,10 @@ export default class EditModal extends React.Component {
         this.setState({randomSwitch: randomSwitch});
     };
 
+    isActionClear(){
+        return this.state.actionSelect==="clear";
+    };
+
     render() {
         return (
             <View>
@@ -124,6 +128,7 @@ export default class EditModal extends React.Component {
                                     <Switch onValueChange={(randomSwitch) => {
                                         this.handleRandomSwitch(randomSwitch)
                                     }}
+                                            disabled={this.isActionClear()}
                                             value={this.state.randomSwitch}
                                             thumbColor={'#FFC0CB'}
                                             trackColor={{false: '#808080', true: '#808080'}}/>
@@ -133,7 +138,7 @@ export default class EditModal extends React.Component {
                                     <TextInput style={this.styles.textInputStyle}
                                                defaultValue={this.state.randomSwitch ? JSON.stringify(this.state.pointsInput) : null}
                                                placeholder={this.state.randomSwitch ? null : "Enter a number"}
-                                               editable={!this.state.randomSwitch}
+                                               editable={!this.state.randomSwitch && !this.isActionClear()}
                                                keyboardType={'number-pad'} maxLength={9}
                                                onChangeText={(pointsInput) => {
                                                    this.setState({pointsInput: pointsInput})
