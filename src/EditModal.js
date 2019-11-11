@@ -89,6 +89,7 @@ export default class EditModal extends React.Component {
 
     isActionClear(){
         return this.state.actionSelect==="clear";
+        // todo find a way to set points to 0 when clear is selected. also display placeholder 0.
     };
 
     render() {

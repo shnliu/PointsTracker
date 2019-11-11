@@ -1,8 +1,16 @@
 import React from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import {View, Text, ImageBackground, StyleSheet} from 'react-native';
 import HomeSettingsBar from "./HomeSettingsBar";
 
 export default class AboutScreen extends React.Component {
+
+    styles = StyleSheet.create({
+        basicTextStyle: {
+            flex: 0.65,
+            fontSize: 30,
+            color: '#383838'
+        },
+    });
 
     constructor(props) {
         super(props);
@@ -19,8 +27,8 @@ export default class AboutScreen extends React.Component {
                         <HomeSettingsBar onPressHome={() => navigate('Home')}
                                          onPressSetting={() => navigate('Setting')}/>
                     </View>
-                    <View style={{flex: 15}}>
-                        <Text style={{fontSize: 30, color: '#383838'}}> ABOUT </Text>
+                    <View style={{flex: 15, alignItems: "center"}}>
+                        <Text style={this.styles.basicTextStyle}> ABOUT </Text>
                         <Text> This is a simple points tracker. </Text>
                     </View>
                 </View>

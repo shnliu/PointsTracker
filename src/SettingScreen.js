@@ -1,9 +1,16 @@
 import React from 'react';
-import {ImageBackground, View, Text} from 'react-native';
+import {ImageBackground, View, Text, StyleSheet} from 'react-native';
 import HomeSettingsBar from "./HomeSettingsBar";
 
 export default class SettingScreen extends React.Component {
 
+    styles = StyleSheet.create({
+        basicTextStyle: {
+            flex: 0.65,
+            fontSize: 30,
+            color: '#383838'
+        }
+    });
     // consider usernames, theme colors.
     // normal mode
     // default
@@ -21,8 +28,9 @@ export default class SettingScreen extends React.Component {
                                          onPressSetting={() => navigate('Setting')}/>
                     </View>
                     <View style={{flex: 15, alignItems: 'center'}}>
-                        <Text> Settings </Text>
+                        <Text style={this.styles.basicTextStyle}> SETTINGS </Text>
                     </View>
+
                 </View>
             </ImageBackground>
         );
