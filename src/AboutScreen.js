@@ -29,7 +29,10 @@ export default class AboutScreen extends React.Component {
                     </View>
                     <View style={{flex: 15, alignItems: "center"}}>
                         <Text style={this.styles.basicTextStyle}> ABOUT </Text>
-                        <Text> This is a simple points tracker. </Text>
+                        <Text style={{margin:40, fontSize: 20}}>
+                            This is a simple points tracker made using react native.
+                            Tracks points between 2 people for some friendly competition or trivial grudge.
+                        </Text>
                     </View>
                 </View>
 
