@@ -44,3 +44,6 @@ Rebuild and update yarn as needed.
 - react-navigation
 - react-native-simple-radio-button
 - react-native-vector-icons/MaterialIcons
+
+![IMG_1913](https://user-images.githubusercontent.com/43304600/119574335-6f837000-bd6a-11eb-837b-db4f71e035f5.PNG)
+
